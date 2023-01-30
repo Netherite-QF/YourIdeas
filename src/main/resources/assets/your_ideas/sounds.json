@@ -1,0 +1,14 @@
+{
+  "entity.brick.throw": {
+    "sounds": [
+      "random/bow"
+    ],
+    "subtitle": "subtitles.entity.brick.throw"
+  },
+  "entity.nether_brick.throw": {
+    "sounds": [
+      "random/bow"
+    ],
+    "subtitle": "subtitles.entity.nether_brick.throw"
+  }
+}

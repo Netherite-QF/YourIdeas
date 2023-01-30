@@ -1,3 +1,5 @@
 {
-  "text.your_ideas.link": "你的想法！"
+  "text.your_ideas.link": "你的想法！",
+  "subtitles.entity.brick.throw": "红砖 ：飞出",
+  "subtitles.entity.nether_brick.throw": "下界砖 ：飞出"
 }

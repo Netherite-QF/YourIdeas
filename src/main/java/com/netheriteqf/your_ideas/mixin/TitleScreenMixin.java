@@ -2,6 +2,7 @@ package com.netheriteqf.your_ideas.mixin;
 
 import com.netheriteqf.your_ideas.YourIdeas;
 import com.netheriteqf.your_ideas.web.BrowserUrl;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TexturedButtonWidget;
 import net.minecraft.text.Text;
@@ -36,9 +37,16 @@ public abstract class TitleScreenMixin extends Screen {
                         (buttonWidget) -> {
                             if (this.client != null) {
                                 try {
-                                    BrowserUrl.browserUrl("https://github.com/Netherite-QF/YourIdeas");
+                                    String code = MinecraftClient.getInstance().getLanguageManager().getLanguage().getCode();
+                                    if (code.indexOf("zh") == 0) {
+                                        BrowserUrl.browserUrl("https://www.mcmod.cn/class/9072.html");
+                                    }
+                                    else {
+                                        BrowserUrl.browserUrl("https://github.com/Netherite-QF/YourIdeas");
+                                    }
+
                                 } catch (Exception e) {
-                                    YourIdeas.LOGGER.info(e.getClass().getName() + ": " + e.getMessage());
+                                    YourIdeas.LOGGER.error(e.getClass().getName() + ": " + e.getMessage());
                                 }
                             }
                         },

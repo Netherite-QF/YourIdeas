@@ -1,6 +1,10 @@
 package com.netheriteqf.your_ideas;
 
 
+import com.netheriteqf.your_ideas.config.ModConfig;
+import com.netheriteqf.your_ideas.init.SoundEventInit;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import org.abstruck.qwq.library.event.reflection.EventLoader;
 import org.slf4j.Logger;
@@ -17,5 +21,7 @@ public class YourIdeas implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("[YourIdeas] Welcome to use YourIdeas!");
         EventLoader.initEvent("com.netheriteqf.your_ideas.init.event");
+        AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+        SoundEventInit.init();
     }
 }

@@ -1,3 +1,5 @@
 {
-  "text.your_ideas.link": "Your Ideas!"
+  "text.your_ideas.link": "Your Ideas!",
+  "subtitles.entity.brick.throw": "Brick flies",
+  "subtitles.entity.nether_brick.throw": "Nether Brick flies"
 }
