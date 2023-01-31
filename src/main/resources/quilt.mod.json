@@ -1,0 +1,39 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "com.netheriteqf.your_ideas",
+		"id": "your_ideas",
+		"version": "${version}",
+		"metadata": {
+			"name": "Your Ideas",
+			"description": "Idea",
+			"contributors": {
+        "Goulixiaoji": "code",
+        "MaoMao": "code"
+			},
+			"icon": "assets/example_mod/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "com.netheriteqf.your_ideas.YourIdeas"
+		},
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.17.6-"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "versions": ">=5.0.0-"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=1.19.3"
+      },
+      {
+      "cloth-config": "*"
+      }
+    ]
+  },
+  "mixin": "YourIdeas.mixins.json"
+}
