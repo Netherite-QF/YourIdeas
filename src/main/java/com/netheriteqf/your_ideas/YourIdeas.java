@@ -3,6 +3,7 @@ package com.netheriteqf.your_ideas;
 
 import com.netheriteqf.your_ideas.config.ModConfig;
 import com.netheriteqf.your_ideas.init.ItemInit;
+import com.netheriteqf.your_ideas.init.PlayerClickEvent;
 import com.netheriteqf.your_ideas.init.SoundEventInit;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -27,6 +28,7 @@ public class YourIdeas implements ModInitializer {
         EventLoader.initEvent("com.netheriteqf.your_ideas.init.event");
         AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
         SoundEventInit.init();
+        PlayerClickEvent.init();
         ItemInit.init();
     }
 }
