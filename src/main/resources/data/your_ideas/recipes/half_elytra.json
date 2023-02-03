@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#",
+    "#A#",
+    "#X#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "A": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "X": {
+      "item": "minecraft:air"
+    }
+  },
+  "result": {
+    "item": "minecraft:elytra",
+    "tag": "{Damage:216}"
+  }
+}
