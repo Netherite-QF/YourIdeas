@@ -34,4 +34,7 @@ public class ModConfig implements ConfigData {
 
     public int huskAttackBlindnessEffectTime = 140;
     public int huskAttackBlindnessEffectAmplifier = 2;
+    
+    public boolean canHeartOfTheSeaStatusEffects = true;
+    public boolean canFixLotsIronGolem = true;
 }
