@@ -1,24 +1,28 @@
 package com.netheriteqf.your_ideas.init;
 
-import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.math.BlockPos;
 
 public class PlayerClickEvent {
     public static void init() {
-        AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) ->
+        UseBlockCallback.EVENT.register(((player, world, hand, hitResult) ->
         {
-            ActionResult result = ActionResult.SUCCESS;
-            BlockState state = world.getBlockState(pos);
+            ItemStack item = player.getMainHandStack();
+            BlockPos pos = hitResult.getBlockPos();
+            BlockState state = world.getBlockState(hitResult.getBlockPos());
             if (state.getBlock() == Blocks.PISTON & player.getMainHandStack().getItem() == Items.SLIME_BALL) {
-                world.setBlockState(pos, Blocks.STICKY_PISTON.getDefaultState());
+                world.setBlockState(pos, Blocks.STICKY_PISTON.getStateWithProperties(state));
+                player.setStackInHand(hand, new ItemStack(Items.SLIME_BALL, item.getCount()-1));
             } else if (state.getBlock() == Blocks.STICKY_PISTON & player.getMainHandStack().getItem() == Items.SHEARS) {
-                world.setBlockState(pos, Blocks.PISTON.getDefaultState());
                 player.dropItem(Items.SLIME_BALL);
+                world.setBlockState(pos, Blocks.PISTON.getStateWithProperties(state));
             }
-            return result;
-        });
+            return ActionResult.PASS;
+        }));
     }
 }

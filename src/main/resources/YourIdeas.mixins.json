@@ -4,9 +4,12 @@
   "package": "com.netheriteqf.your_ideas.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "HuskAttackMixin"
   ],
   "client": [
     "TitleScreenMixin"
+  ],
+  "server": [
   ],
   "injectors": {
     "defaultRequire": 1

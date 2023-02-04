@@ -11,12 +11,13 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.feature.OreConfiguredFeatures;
 import org.abstruck.qwq.library.event.reflection.EventLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Goulixiaoji
+ * @author Goulixiaoji, Oganesson897
  */
 public class YourIdeas implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(YourIdeas.class);

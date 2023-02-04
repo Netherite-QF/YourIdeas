@@ -13,11 +13,11 @@
       "item": "minecraft:leather_chestplate"
     },
     "X": {
-      "item": "minecraft:air"
+      "item": "minecraft:string"
     }
   },
   "result": {
     "item": "minecraft:elytra",
-    "tag": "{Damage:216}"
+    "tag": "Damage:216"
   }
 }
