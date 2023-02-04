@@ -17,7 +17,6 @@
     }
   },
   "result": {
-    "item": "minecraft:elytra",
-    "tag": "Damage:216"
+    "item": "your_ideas:phantomelytra"
   }
 }
