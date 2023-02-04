@@ -2,7 +2,6 @@ package com.netheriteqf.your_ideas.init;
 
 import com.netheriteqf.your_ideas.YourIdeas;
 import com.netheriteqf.your_ideas.common.items.EnchantedGoldenCarrotItem;
-import com.netheriteqf.your_ideas.common.items.PhantomelytraItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -14,7 +13,6 @@ import net.minecraft.util.registry.Registry;
 public class ItemInit {
     public static void init() {
         item("enchanted_golden_carrot", new EnchantedGoldenCarrotItem());
-        item("phantomelytra", new PhantomelytraItem());
     }
 
     public static Item item(String name, Item item) {
