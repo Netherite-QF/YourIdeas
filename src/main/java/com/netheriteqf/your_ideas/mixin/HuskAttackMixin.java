@@ -1,5 +1,6 @@
 package com.netheriteqf.your_ideas.mixin;
 
+import com.netheriteqf.your_ideas.config.ModConfig;
 import net.minecraft.entity.Entity;
 
 import net.minecraft.entity.LivingEntity;
@@ -12,17 +13,15 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.logging.Logger;
-
 @Mixin(HuskEntity.class)
 public class HuskAttackMixin {
     @Debug
     @Inject(method = "tryAttack", at = @At("RETURN"))
     public void tryAttack(Entity target, CallbackInfoReturnable<Boolean> cir) {
         if (target instanceof LivingEntity) {
-            int random = target.getWorld().getRandom().nextInt(0, 10);
-            if (random == 1) {
-                ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 140, 2));
+            int random = target.getWorld().getRandom().nextInt(0, 100);
+            if (random >= ModConfig.get().huskAttackBlindnessChance && ModConfig.get().canHuskAttackBlindness) {
+                ((LivingEntity)target).addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, ModConfig.get().huskAttackBlindnessEffectTime, ModConfig.get().huskAttackBlindnessEffectAmplifier));
             }
         }
     }

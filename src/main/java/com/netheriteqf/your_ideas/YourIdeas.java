@@ -5,6 +5,7 @@ import com.netheriteqf.your_ideas.config.ModConfig;
 import com.netheriteqf.your_ideas.init.ItemInit;
 import com.netheriteqf.your_ideas.init.PlayerClickEvent;
 import com.netheriteqf.your_ideas.init.SoundEventInit;
+import com.netheriteqf.your_ideas.init.TagsInit;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
