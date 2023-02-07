@@ -33,9 +33,6 @@
       {
         "id": "minecraft",
         "versions": ">=1.19.3"
-      },
-      {
-        "cloth-config": "*"
       }
     ]
   },
