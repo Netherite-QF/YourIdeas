@@ -16,7 +16,6 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.widget.TexturedButtonWidget;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
@@ -48,7 +47,8 @@ public abstract class TitleScreenMixin extends Screen {
                                     if (code.indexOf("zh") == 0) {
                                         Util.getOperatingSystem().open(new URL("https://www.mcmod.cn/class/9072.html"));
                                     } else {
-                                        Util.getOperatingSystem().open(new URL("https://github.com/Netherite-QF/YourIdeas"));
+                                        Util.getOperatingSystem()
+                                                .open(new URL("https://github.com/Netherite-QF/YourIdeas"));
                                     }
 
                                 } catch (Exception e) {
@@ -56,6 +56,6 @@ public abstract class TitleScreenMixin extends Screen {
                                 }
                             }
                         },
-                        new TranslatableText("text.your_ideas.link")));
+                        Text.translatable("text.your_ideas.link")));
     }
 }

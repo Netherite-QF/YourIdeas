@@ -4,14 +4,13 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Rarity;
 
 public class EnchantedGoldenCarrotItem extends Item {
 
     public EnchantedGoldenCarrotItem() {
-        super(new Settings().group(ItemGroup.FOOD).rarity(Rarity.EPIC).food(
+        super(new Settings().rarity(Rarity.EPIC).food(
                 new FoodComponent.Builder().hunger(3).saturationModifier(1.1F)
                         .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 360, 1), 1.0F)
                         .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 5900, 0), 1.0F)

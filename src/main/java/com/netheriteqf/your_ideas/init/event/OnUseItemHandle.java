@@ -1,7 +1,5 @@
 package com.netheriteqf.your_ideas.init.event;
 
-import java.util.Random;
-
 import com.netheriteqf.your_ideas.common.entities.BrickEntity;
 import com.netheriteqf.your_ideas.common.entities.NetherBrickEntity;
 import com.netheriteqf.your_ideas.config.ModConfig;
@@ -17,6 +15,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.random.RandomGenerator;
 import net.minecraft.world.World;
 
 /**
@@ -33,7 +32,7 @@ public class OnUseItemHandle implements UseItemCallback {
             if (!world.isClient) {
                 BrickEntity brickEntity = new BrickEntity(world, player);
                 brickEntity.setItem(stack);
-                brickEntity.setVelocity(player, player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
+                brickEntity.setVelocity(player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
                 world.spawnEntity(brickEntity);
                 world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEventInit.BRICK_THROWN,
                         SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
@@ -47,7 +46,7 @@ public class OnUseItemHandle implements UseItemCallback {
 
         if (stack.isOf(Items.FIRE_CHARGE) && ModConfig.get().canThrownFireCharge) {
             player.getItemCooldownManager().set(stack.getItem(), 40);
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 float yaw = player.getHeadYaw();
                 float pitch = player.getPitch();
                 float roll = 0.0F;
@@ -64,7 +63,7 @@ public class OnUseItemHandle implements UseItemCallback {
                 fireballEntity.setPosition(player.getX(), player.getBodyY(0.5) + 0.5, player.getZ());
                 world.spawnEntity(fireballEntity);
 
-                Random random = world.getRandom();
+                RandomGenerator random = world.getRandom();
                 world.playSound(null, player.getBlockPos(), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 1.0f,
                         (random.nextFloat() - random.nextFloat()) * 0.2f + 1.0f);
             }
@@ -79,7 +78,7 @@ public class OnUseItemHandle implements UseItemCallback {
             player.getItemCooldownManager().set(stack.getItem(), 20);
             if (!world.isClient) {
                 NetherBrickEntity netherBrickEntity = new NetherBrickEntity(world, player);
-                netherBrickEntity.setVelocity(player, player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
+                netherBrickEntity.setVelocity(player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
                 netherBrickEntity.setItem(stack);
                 world.spawnEntity(netherBrickEntity);
                 world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEventInit.NETHER_BRICK_THROWN,

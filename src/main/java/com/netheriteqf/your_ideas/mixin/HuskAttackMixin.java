@@ -19,7 +19,7 @@ public class HuskAttackMixin {
     @Inject(method = "tryAttack", at = @At("RETURN"))
     public void tryAttack(Entity target, CallbackInfoReturnable<Boolean> cir) {
         if (target instanceof LivingEntity livingEntity) {
-            int random = livingEntity.getWorld().getRandom().nextInt(0, 100);
+            int random = livingEntity.getWorld().getRandom().range(0, 100);
             if (random >= ModConfig.get().huskAttackBlindnessChance && ModConfig.get().canHuskAttackBlindness) {
                 livingEntity.addStatusEffect(
                         new StatusEffectInstance(StatusEffects.BLINDNESS, ModConfig.get().huskAttackBlindnessEffectTime,
