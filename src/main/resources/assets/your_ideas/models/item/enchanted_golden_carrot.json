@@ -1,6 +1,3 @@
 {
-  "parent": "your_ideas:item/generated",
-  "textures": {
-    "layer0": "your_ideas:item/enchanted_golden_carrot"
-  }
+  "parent": "minecraft:item/golden_carrot"
 }

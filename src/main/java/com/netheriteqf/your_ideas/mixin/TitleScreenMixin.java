@@ -21,7 +21,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(TitleScreen.class)
 public abstract class TitleScreenMixin extends Screen {
-    @Shadow @Final private static Identifier ACCESSIBILITY_ICON_TEXTURE;
+    @Shadow
+    @Final
+    private static Identifier ACCESSIBILITY_ICON_TEXTURE;
 
     protected TitleScreenMixin(Text title) {
         super(title);
@@ -37,11 +39,11 @@ public abstract class TitleScreenMixin extends Screen {
                         (buttonWidget) -> {
                             if (this.client != null) {
                                 try {
-                                    String code = MinecraftClient.getInstance().getLanguageManager().getLanguage().getCode();
+                                    String code = MinecraftClient.getInstance().getLanguageManager().getLanguage()
+                                            .getCode();
                                     if (code.indexOf("zh") == 0) {
                                         BrowserUrl.browserUrl("https://www.mcmod.cn/class/9072.html");
-                                    }
-                                    else {
+                                    } else {
                                         BrowserUrl.browserUrl("https://github.com/Netherite-QF/YourIdeas");
                                     }
 

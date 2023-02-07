@@ -1,32 +1,22 @@
 {
   "schemaVersion": 1,
   "id": "your_ideas",
-  "version": "1.2",
+  "version": "${version}",
   "name": "Your Ideas",
   "description": "",
-  "authors": [
-    "Goulixiaoji",
-    "MaoMao"
-  ],
+  "authors": ["Goulixiaoji", "MaoMao"],
   "contact": {},
   "license": "GPL-3.0",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "com.netheriteqf.your_ideas.client.YourIdeasClient"
-    ],
-    "main": [
-      "com.netheriteqf.your_ideas.YourIdeas"
-    ]
+    "client": ["com.netheriteqf.your_ideas.client.YourIdeasClient"],
+    "main": ["com.netheriteqf.your_ideas.YourIdeas"]
   },
-  "mixins": [
-    "YourIdeas.mixins.json"
-  ],
+  "mixins": ["YourIdeas.mixins.json"],
   "depends": {
     "fabricloader": ">=0.14.13",
     "fabric": "*",
     "minecraft": "1.18.2",
-    "qwq": "*",
     "cloth-config": "*"
   }
 }

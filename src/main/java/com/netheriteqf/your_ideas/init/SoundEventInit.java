@@ -10,7 +10,8 @@ import net.minecraft.util.registry.Registry;
  */
 public class SoundEventInit {
     public static final Identifier BRICK_THROWN_IDENTIFIER = new Identifier(YourIdeas.MOD_ID, "entity.brick.throw");
-    public static final Identifier NETHER_BRICK_THROWN_IDENTIFIER = new Identifier(YourIdeas.MOD_ID, "entity.nether_brick.throw");
+    public static final Identifier NETHER_BRICK_THROWN_IDENTIFIER = new Identifier(YourIdeas.MOD_ID,
+            "entity.nether_brick.throw");
     public static SoundEvent BRICK_THROWN = new SoundEvent(BRICK_THROWN_IDENTIFIER);
     public static SoundEvent NETHER_BRICK_THROWN = new SoundEvent(NETHER_BRICK_THROWN_IDENTIFIER);
 

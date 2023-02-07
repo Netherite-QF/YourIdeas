@@ -1,6 +1,7 @@
 package com.netheriteqf.your_ideas.config;
 
 import com.netheriteqf.your_ideas.YourIdeas;
+
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
@@ -34,7 +35,7 @@ public class ModConfig implements ConfigData {
 
     public int huskAttackBlindnessEffectTime = 140;
     public int huskAttackBlindnessEffectAmplifier = 2;
-    
+
     public boolean canHeartOfTheSeaStatusEffects = true;
     public boolean canFixLotsIronGolem = true;
 }

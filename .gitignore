@@ -1,0 +1,41 @@
+*.DS_Store
+*.mrpack
+*.zip
+/.vscode/*
+*.pxd
+/.idea/*
+/.fleet/*
+openloader-resources
+
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+*.project
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project/
+.VSCodeCounter/
+
+# quilt
+
+run/
+.factorypath
