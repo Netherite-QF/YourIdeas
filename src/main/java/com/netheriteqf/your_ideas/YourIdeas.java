@@ -7,6 +7,7 @@ import com.netheriteqf.your_ideas.config.ModConfig;
 import com.netheriteqf.your_ideas.init.ItemInit;
 import com.netheriteqf.your_ideas.init.SoundEventInit;
 import com.netheriteqf.your_ideas.init.event.ItemUseOnEntityEventHandle;
+import com.netheriteqf.your_ideas.init.event.OnUseItemHandle;
 import com.netheriteqf.your_ideas.init.event.PlayerClickEventHandle;
 import com.netheriteqf.your_ideas.init.event.ServerWorldTickEventHandle;
 
@@ -16,6 +17,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
 
 /**
  * @author Goulixiaoji, Oganesson897
@@ -33,6 +35,7 @@ public class YourIdeas implements ModInitializer {
 
         UseBlockCallback.EVENT.register(new PlayerClickEventHandle());
         UseEntityCallback.EVENT.register(new ItemUseOnEntityEventHandle());
+        UseItemCallback.EVENT.register(new OnUseItemHandle());
         ServerTickEvents.START_WORLD_TICK.register(new ServerWorldTickEventHandle());
     }
 }

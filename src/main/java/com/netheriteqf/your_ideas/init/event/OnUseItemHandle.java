@@ -27,6 +27,8 @@ public class OnUseItemHandle implements UseItemCallback {
     @Override
     public TypedActionResult<ItemStack> interact(PlayerEntity player, World world, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
+        if (player.getItemCooldownManager().isCoolingDown(stack.getItem()))
+            return TypedActionResult.pass(stack);
 
         if (stack.isOf(Items.BRICK) && ModConfig.get().canThrownBrick) {
             player.getItemCooldownManager().set(stack.getItem(), 20);
