@@ -32,7 +32,7 @@ public class OnUseItemHandle implements UseItemCallback {
             if (!world.isClient) {
                 BrickEntity brickEntity = new BrickEntity(world, player);
                 brickEntity.setItem(stack);
-                brickEntity.setVelocity(player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
+                brickEntity.setProperties(player, player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
                 world.spawnEntity(brickEntity);
                 world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEventInit.BRICK_THROWN,
                         SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
@@ -78,7 +78,7 @@ public class OnUseItemHandle implements UseItemCallback {
             player.getItemCooldownManager().set(stack.getItem(), 20);
             if (!world.isClient) {
                 NetherBrickEntity netherBrickEntity = new NetherBrickEntity(world, player);
-                netherBrickEntity.setVelocity(player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
+                netherBrickEntity.setProperties(player, player.getPitch(), player.getYaw(), 0.0F, 0.8F, 0F);
                 netherBrickEntity.setItem(stack);
                 world.spawnEntity(netherBrickEntity);
                 world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEventInit.NETHER_BRICK_THROWN,
