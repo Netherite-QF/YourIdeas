@@ -3,10 +3,8 @@
   "minVersion": "0.8",
   "package": "com.netheriteqf.your_ideas.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-  ],
-  "client": [
-  ],
+  "mixins": ["HuskAttackMixin"],
+  "client": ["TitleScreenMixin"],
   "injectors": {
     "defaultRequire": 1
   }

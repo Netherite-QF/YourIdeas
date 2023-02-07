@@ -1,10 +1,12 @@
 package com.netheriteqf.your_ideas.config;
 
 import com.netheriteqf.your_ideas.YourIdeas;
+
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
 /**
  * @author Goulixiaoji, MaoMao
@@ -26,4 +28,14 @@ public class ModConfig implements ConfigData {
     public boolean canThrownFireCharge = true;
     public float fireChargeFlyingSpeed = 1.0F;
     public int fireChargeExplosionPower = 4;
+
+    public boolean canHuskAttackBlindness = true;
+    @Comment("Max=100, Min=1, Default=1")
+    public int huskAttackBlindnessChance = 1;
+
+    public int huskAttackBlindnessEffectTime = 140;
+    public int huskAttackBlindnessEffectAmplifier = 2;
+
+    public boolean canHeartOfTheSeaStatusEffects = true;
+    public boolean canFixLotsIronGolem = true;
 }
