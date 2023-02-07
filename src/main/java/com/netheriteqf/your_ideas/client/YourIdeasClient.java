@@ -1,6 +1,7 @@
 package com.netheriteqf.your_ideas.client;
 
 import com.netheriteqf.your_ideas.init.EntityTypeInit;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
