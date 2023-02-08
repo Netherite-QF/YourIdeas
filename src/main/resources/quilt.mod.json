@@ -1,22 +1,26 @@
 {
-	"schema_version": 1,
-	"quilt_loader": {
-		"group": "com.netheriteqf.your_ideas",
-		"id": "your_ideas",
-		"version": "${version}",
-		"metadata": {
-			"name": "Your Ideas",
-			"description": "Idea",
-			"contributors": {
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "com.netheriteqf.your_ideas",
+    "id": "your_ideas",
+    "version": "${version}",
+    "metadata": {
+      "name": "Your Ideas",
+      "description": "Idea",
+      "contributors": {
         "Goulixiaoji": "code",
         "MaoMao": "code"
-			},
-			"icon": "assets/example_mod/icon.png"
-		},
-		"intermediate_mappings": "net.fabricmc:intermediary",
-		"entrypoints": {
-			"init": "com.netheriteqf.your_ideas.YourIdeas"
-		},
+      },
+      "icon": "assets/example_mod/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": "com.netheriteqf.your_ideas.YourIdeas",
+      "client_init": "com.netheriteqf.your_ideas.client.YourIdeasClient",
+      "events": [
+        "com.netheriteqf.your_ideas.init.event.ServerWorldTickEventHandle"
+      ]
+    },
     "depends": [
       {
         "id": "quilt_loader",
@@ -29,9 +33,6 @@
       {
         "id": "minecraft",
         "versions": ">=1.19.3"
-      },
-      {
-      "cloth-config": "*"
       }
     ]
   },
